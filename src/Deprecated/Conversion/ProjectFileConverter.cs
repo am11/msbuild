@@ -492,7 +492,7 @@ namespace Microsoft.Build.Conversion
                 this.xmakeProject = ProjectRootElement.Open(oldProjectFile);
 
                 // For Whidbey project just need to set the "ToolsVersion" attribute for the main project file
-                // and remove imports like <Import Project="$(MSBuildBinPath)\Microsoft.WinFX.targets" />
+                // and remove imports like <Import Project="$(MSBuildBinPath)\Microsoft.WinFx.targets" />
                 // because the Fidalgo stuff is part of .NET Framework 3.5
 
                 // For upgraded workflow projects, the workflow targets need to reference the new v3.5 targets instead of v3.0 targets
@@ -516,7 +516,7 @@ namespace Microsoft.Build.Conversion
                 // Find matching imports but don't delete whilst enumerating else it will throw an error
                 foreach (ProjectImportElement nextImport in xmakeProject.Imports)
                 {
-                    if (String.Compare(nextImport.Project, @"$(MSBuildBinPath)\Microsoft.WinFX.targets", StringComparison.OrdinalIgnoreCase) == 0)
+                    if (String.Compare(nextImport.Project, @"$(MSBuildBinPath)\Microsoft.WinFx.targets", StringComparison.OrdinalIgnoreCase) == 0)
                     {
                         listOfImportsToBeDeleted.Add(nextImport);
                     }
@@ -608,7 +608,7 @@ namespace Microsoft.Build.Conversion
                     }
                 }
 
-                // DevDiv Bugs bug 100701: if we removed the Microsoft.WinFX.targets import,
+                // DevDiv Bugs bug 100701: if we removed the Microsoft.WinFx.targets import,
                 // and if there is no ProjectTypeGuids property, add the WPF flavor GUID
                 if (removedWinFXTargets)
                 {

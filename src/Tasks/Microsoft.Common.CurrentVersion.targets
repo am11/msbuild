@@ -5915,7 +5915,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
           Condition="('$(TargetFrameworkVersion)' != 'v2.0' and '$(TargetFrameworkVersion)' != 'v3.5' and (!$([System.String]::IsNullOrEmpty('$(TargetFrameworkVersion)')) and !$(TargetFrameworkVersion.StartsWith('v4.0')))) and Exists('$(MSBuildToolsPath)\Microsoft.WorkflowBuildExtensions.targets')"/>
 
   <!-- This import is temporary and will be removed once it is moved into the silverlight targets -->
-  <Import Project="$(MSBuildToolsPath)\Microsoft.WinFX.targets" Condition="'$(TargetFrameworkIdentifier)' == 'Silverlight' and Exists('$(MSBuildToolsPath)\Microsoft.WinFX.targets')"/>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.WinFx.targets" Condition="'$(TargetFrameworkIdentifier)' == 'Silverlight' and Exists('$(MSBuildToolsPath)\Microsoft.WinFx.targets')"/>
 
   <PropertyGroup>
     <MsTestToolsTargets Condition="'$(MsTestToolsTargets)'==''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TeamTest\Microsoft.TeamTest.targets</MsTestToolsTargets>
